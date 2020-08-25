@@ -32,3 +32,10 @@
 en:
   hello: "Hello world"
   site_title: "Copy of Twitter"
+
+datetime:
+  distance_in_words:
+    short:
+      about_x_hours:
+        one: 'an hour'
+        other: '%{count} hours'

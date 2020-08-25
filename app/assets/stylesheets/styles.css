@@ -1,0 +1,25 @@
+.navtext {
+  color: #ffffff;
+  font-color: #FFFfff;
+  font-weight: 800;
+  font-size: 200%,
+  font-family: 'IM Fell DW Pica', serif;
+}
+
+.nnav {
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 24%, rgba(1,194,143,1) 100%);
+}
+
+
+.retweet-ref {
+  color: white;
+  font-size: 15px;
+
+}
+
+.date{
+  a{
+    font-size: 10px;
+  }
+}

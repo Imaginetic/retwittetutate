@@ -1,14 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @tweet.content %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @tweet.user %>
-</p>
+<%= render "shared/tweet_card", tweet: @tweet %>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+<div class="m-2">
+  <% @tweet.liking_users.each do |user| %>
+    <%= image_tag (user.photo_url), :class => "avatar-in-tweet rounded m-1" %>
+  <% end %>
+</div>

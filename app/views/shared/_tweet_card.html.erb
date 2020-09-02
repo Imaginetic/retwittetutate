@@ -1,7 +1,10 @@
-<div class="col-12 shadow-lg rounded p-1 mt-2 card-tweet">
+<div class="container col-11 shadow-lg rounded p-1 mt-2 card-tweet">
   <div class="row">
     <div class="col-1">
-      <%= image_tag (tweet.user.photo_url), :class => "avatar-in-tweet rounded" %>
+      <%= image_tag (tweet.user.photo_url), :class => "avatar-in-tweet rounded" %><br/>
+      <% if user_signed_in? && current_user != tweet.user %>
+        <%= link_to (current_user.is_following?(tweet.user) ? "<i class='fas fa-user-friends text-primary'></i>" : "<i class='fas fa-user-plus'></i>").html_safe, users_follow_path(tweet.user.id), class:"follow-btn", 'title' => (current_user.is_following?(tweet.user) ? "Siguiendo" : "seguir"), 'data-toggle' => 'tooltip', 'data-placement' => 'right', method: :post %>
+      <% end %>
     </div>
     <div class="col-11">
       <span class="username"><%= tweet.user.username %> dice:</span><br/>

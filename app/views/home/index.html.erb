@@ -3,7 +3,7 @@
     <div class="col-12 new-tweet text-white pt-4 pb-2">
       <%= render 'tweets/form', tweet: @tweet %>
     </div>
-  <% end %>
+<% end %>
 
   <% @tweets.each do |tweet| %>
     <%= render "shared/tweet_card", tweet: tweet %>

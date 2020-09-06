@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   #get 'api/news'
   scope '/api' do
     get '/news', to: 'api#news'
-    get '/:date1/:date2', to: 'api#tweets_between_dates' as:'tweets_between_dates'
+    get '/:date1/:date2', to: 'api#tweets_between_dates', as: 'tweets_between_dates'
+
   end
 end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   ActiveAdmin.routes(self)
   resources :tweets do
     post 'likes', to: 'tweets#likes'
@@ -12,7 +13,11 @@ Rails.application.routes.draw do
   #get 'users/follow'
   post 'follow/:user_id', to: 'users#follow', as: 'users_follow'
 
-
   root to: 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #get 'api/news'
+  scope '/api' do
+    get '/news', to: 'api#news'
+    get '/:date1/:date2', to: 'api#tweets_between_dates' as:'tweets_between_dates'
+  end
 end
